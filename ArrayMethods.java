@@ -17,7 +17,6 @@ public static String arrToString(int[]ary){
     ans += "]";
   return ans;
 }
-
 //3. Write arrToString, with a 2D array parameter.
 //Note: Different parameters are allowed with the same function name.
 /**Return a String that represets the 2D array in the format:
@@ -35,21 +34,36 @@ if(i<ary.length-1)result += ",";
 result += "]";
 return result;
 }
-
 /*Return the sum of all of the values in the 2D array */
 public static int arr2DSum(int[][]nums){
-  //use a nested loop to solve this
-  return null;//place holder return value so it compiles.
+  int sum = 0;
+for(int j= 0; j< nums.length;j++){
+for(int h = 0; h< nums[j].lengtj;h++){
+sum+= nums[j][h];
 }
-
+}
+  return sum;
+}
 /**Rotate an array by returning a new array with the rows and columns swapped.
   * You may assume the array is rectangular and neither rows nor cols is 0.
   * e.g. swapRC({{1,2,3},{4,5,6}}) returns {{1,4},{2,5},{3,6}}
   */
 public static int[][] swapRC(int[][]nums){
-  return new int[1][1];
+  int row = nums.length;
+int col = nums[0].length;
+int[][] result = new int[c][r];
+for(int r =0; r <row;r++){
+for(int c = 0; c<col; c++){
+result[c][r] = nums[r][c];
 }
+}
+return result;
 public static void main(String[] args) {
-  System.out.println("" + arrToString2D())
+int[][] test = {
+{2,3,4},
+{5,6,7},
+{2,4,9}};
+  System.out.println("arrToString" + arrToString2D(test))
+System.out.println("arr2Dsum" + arr2DSum(test))
 }
 }
