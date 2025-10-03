@@ -27,9 +27,13 @@ public static String arrToString(int[]ary){
   * previous code, but you should NOT duplicate that code. (Don't copy/paste or retype it)
   */
 public static String arrToString2D(int[][]ary){
-  //this method should call arrToString(int[])
-
-  return "";
+  String result = "[";
+for(int i = 0; i <ary.length;i++){
+result += arrToString(ary[i]);
+if(i<ary.length-1)result += ",";
+}
+result += "]";
+return result;
 }
 
 /*Return the sum of all of the values in the 2D array */
