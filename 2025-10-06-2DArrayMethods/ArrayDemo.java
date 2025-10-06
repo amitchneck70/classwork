@@ -7,22 +7,15 @@ public class ArrayDemo{
     //Compare Arrays.toString(yourArray) to YOUR arrayToString() method to make sure yours is correct
     //Compare Arrays.deeoToString(your2DArray) to YOUR arrayToString() method to make sure yours is correct
     //do not use any other Arrays.method()
-    public static String htmlTable(int[][] nums){
-      for(int row = 0; row <nums.length;row++){
-      String s= (Arrays.toString(nums))
-      String final = "<table>" + "<tr>"+ nums[i][] " " + nums[i+1];
-      }
-    }
-      }
+   
 
-  }
-
-}public static void main(String[] args) {
-int[][] test = {
-{2,3,4},
-{5,6,7},
-{2,4,9}};
-  System.out.println("htmlTable" + arrToString2D(test))
-System.out.println("arr2Dsum" + arr2DSum(test))
+ public static String htmlTable(int[][] nums){
+String html = "<table>"; // opening tab for the table
+for (int row = 0; row < nums.length; row++){ // loop through rows
+html = html + "<tr>";
+for(int col = 0; col < nums[row].length; col++){
+html = html + "<td>" + nums[row][col] + "</td";
 }
+html = html + "</table>" //close row
+return html;
 }
