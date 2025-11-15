@@ -1,10 +1,11 @@
 import java.util.Scanner;
+import java.io.File;
 public class TaxiCab{
   public static void main(String[] args){
     Scanner sc = new Scanner(new File("input.txt"));
     String input = sc.nextLine();
     sc.close();
-   String [] step = input.split(", ");
+   String [] steps = input.split(", ");
    int[][] cardinalPt = {{0,1},{1,0},{0,-1},{-1,0}};
   int x=0,y=0,pov = 0; //pov for the direction being faced, (point of view)
  for (String step: steps){
