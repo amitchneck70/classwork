@@ -1,8 +1,10 @@
 import java.util.Scanner;
 import java.io.File;
+import java.io.FileNotFoundException;
 public class TaxiCab{
   public static void main(String[] args){
-    Scanner sc = new Scanner(new File("input.txt"));
+ try{ 
+  Scanner sc = new Scanner(new File("input.txt"));
     String input = sc.nextLine();
     sc.close();
    String [] steps = input.split(", ");
@@ -16,6 +18,10 @@ else pov = (pov +3)%4;
   x+= cardinalPt[pov][0] * distance;
   y += cardinalPt[pov][1] * distance;
  }
- System.out.println(Math.abs(x) + Math.abs(y));
- }
+ System.out.println(Math.abs(x) + Math.abs(y));//distance
+ }catch(FileNotFoundException e){
+   System.out.println("input file not found");
+  
+}
+}
 }
