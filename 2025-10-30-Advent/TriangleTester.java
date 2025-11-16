@@ -5,6 +5,11 @@ import java.util.Scanner;
 public class TriangleTester{
   public static void main (String[] args){
     //Test cases for triangleCheck
+
+    System.out.println(triangleCheck(785, 516,744));
+    System.out.println(triangleCheck(272,511,358));
+    System.out.println(triangleCheck(801, 791,693));
+
     try {
       File file = new File("inputTri.txt");
       Scanner input = new Scanner(file);
@@ -35,25 +40,24 @@ public static int countTrianglesA(String filename) {
  }
  return count;
 }
-}
 // pt B
-//public static int countTrianglesB(String filename) {
-//  int count = 0;
-//  try (Scanner in = new Scanner(new File(filename))){
-  //  while (in.hasNextLine()) {
-  //    int[][] lines = new int[3][3];
-  //    for (int i = 0; i < 3; i++) {
-  //      String[] nums = in.nextLine().trim().split("\\s+");
-  //      for (int j = 0; j < 3; j++) lines[i][j] = Integer.parseInt(nums[j]);
-  //    }
-  //    for (int col = 0; col < 3; col++) {
-  ////     if(triangleCheck(lines[0][col],lines[1][col], lines[2][col]))
+public static int countTrianglesB(String filename) {
+  int count = 0;
+  try (Scanner in = new Scanner(new File(filename))){
+    while (in.hasNextLine()) {
+      int[][] lines = new int[3][3];
+      for (int i = 0; i < 3; i++) {
+        String[] nums = in.nextLine().trim().split("\\s+");
+        for (int j = 0; j < 3; j++) lines[i][j] = Integer.parseInt(nums[j]);
+      }
+      for (int col = 0; col < 3; col++) {
+       if(triangleCheck(lines[0][col],lines[1][col], lines[2][col]))
       count ++;
     }
-  //}
-//}catch(FileNotFoundException e){
+  }
+}catch(FileNotFoundException e){
   System.out.println("File not found");
 }
-//return count;
-//}
-//}
+return count;
+}
+}
