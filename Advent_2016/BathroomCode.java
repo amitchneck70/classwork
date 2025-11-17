@@ -5,7 +5,7 @@ import java.util.*;
 public class BathroomCode {
 
     public static void main(String[] args) throws IOException {
-        List<String> instructions = Files.readAllLines(Paths.get("input.txt"));
+        List<String> instructions = Files.readAllLines(Paths.get("bathinput.txt"));
         int x = 1, y = 1; // start at '5', which is (row=1, col=1)
         int[][] keypad = {
             {1,2,3},
