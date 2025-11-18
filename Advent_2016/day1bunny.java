@@ -1,7 +1,11 @@
 import java.util.*;
+import java.io.*;
 public class day1bunny{
-  public static void main(String[] args){
-   String[] moves = {"R8","R4","R4","R8"};
+  public static void main(String[] args)throws Exception {
+   Scanner sc = new Scanner(new File("day1.txt"));
+   String line = sc.nextLine();
+  sc.close();
+   String[] moves = line.split(",\\s*");
    List <String> visited = new ArrayList<>();
   int x = 0, y = 0, dir = 0;
   visited.add("0,0");
@@ -12,7 +16,7 @@ public class day1bunny{
      if(dir == 0) y++;
      if(dir == 1) x++;
      if(dir == 2) y--;
-    if(dir ==3) y++;
+    if(dir ==3) x--;
    String pos = x+","+ y;
    if(visited.contains(pos)){
      System.out.println(Math.abs(x)+Math.abs(y));
