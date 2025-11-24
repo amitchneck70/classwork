@@ -1,6 +1,8 @@
 public class Bird extends Animal{
+  //instance variables, characteristics for Animals that are Birds
   private double height;
   private String color;
+  //override method
   public Bird(String noise, int age, String name, double height, String color){
     super(noise, age, name);
     this.height = height;
