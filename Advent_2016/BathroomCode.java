@@ -6,13 +6,15 @@ public class BathroomCode {
 
     public static void main(String[] args) throws IOException {
         List<String> instructions = Files.readAllLines(Paths.get("bathinput.txt"));
-        int x = 1, y = 1; // start at '5', which is (row=1, col=1)
-        int[][] keypad = {
-            {1,2,3},
-            {4,5,6},
-            {7,8,9}
-        };
-
+        int x = 1, y = 1; // start at '5'  which is (row=1, col=1)
+        String [][] keypad = {
+            {null , null, "1", null ,null},
+            {null , "2", "3","4" ,null},
+            {"5","6","7","8","9"}
+            ,{null, "A","B","C",null}
+            {null,null,"D",null,null}
+            };
+        int x = 0, y =2;
         StringBuilder code = new StringBuilder();
 
         for (String line : instructions) {
@@ -23,13 +25,15 @@ public class BathroomCode {
                     case 'D': newX = Math.min(2, x+1); break;
                     case 'L': newY = Math.max(0, y-1); break;
                     case 'R': newY = Math.min(2, y+1); break;
-                }
-                x = newX; y = newY;
+
+               }
+            if(newY >= 0 && newY<5&&newX>=0 && newX<5&& keypad[newY][newX] != null){
+              x = newX; y = newY;
             }
+           }
             code.append(keypad[x][y]);
         }
 
         System.out.println(code);
     }
 }
-

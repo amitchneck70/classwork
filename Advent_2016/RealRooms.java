@@ -5,33 +5,32 @@ import java.util.*;
 public class RealRooms {
     public static void main(String[] args) throws IOException {
         List<String> lines = Files.readAllLines(Paths.get("input4.txt"));
-        int sumSectorIDs = 0;
 
         for (String line : lines) {
             int lastDash = line.lastIndexOf('-');
             String name = line.substring(0, lastDash);
             String rest = line.substring(lastDash + 1);
-            int bracketStart = rest.indexOf('[');
-            int sectorID = Integer.parseInt(rest.substring(0, bracketStart));
+            int sectorID = Integer.parseInt(rest.substring(0, rest.indexOf('[')));
             String checksum = rest.substring(bracketStart + 1, rest.length() - 1);
-
-            Map<Character, Integer> freq = new HashMap<>();
-            for (char c : name.toCharArray()) {
-                if (c != '-') freq.put(c, freq.getOrDefault(c, 0) + 1);
-            }
-
-            List<Character> letters = new ArrayList<>(freq.keySet());
-            letters.sort((a, b) -> {
-                int diff = freq.get(b) - freq.get(a);
-                return diff != 0 ? diff : a - b;
-            });
-
-            StringBuilder topFive = new StringBuilder();
-            for (int i = 0; i < 5; i++) topFive.append(letters.get(i));
-
-            if (topFive.toString().equals(checksum)) sumSectorIDs += sectorID;
-        }
-
-        System.out.println(sumSectorIDs);
-    }
-}
+            int[] freq = new int[26];
+          for(char c: name.toCharArray()) if (c!= '-') freq[c-'a']++;
+         StringBuilder top = new StringBuilder();
+        for(int i = 0; i < 5; i++){
+           int max = 0, idx = 0;
+           for(int j = 0; j<26;j++){
+              if(freq[j]>max|| freq[j] == max&& j<idx){
+                max = freq[j]; idx= j;
+               }
+              }
+           top.append((char)('a' =idx));
+           freq[idx]=0;
+         }
+          if(top.topString().equals(checksum)){
+          StringBuilder dec =  newStringBuilder();
+          for(char c: name.toCharArray()){
+          if(c=='-')dec.append(' ');
+         else dec.append((char)( 'a'  + ((c-'a' + sectorID)%26)));
+        }  
+       if(dec.toString().contains("northpole"))
+       System.out.println(sectorID + " >" + dec);
+}}}}
