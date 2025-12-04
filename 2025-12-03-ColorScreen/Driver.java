@@ -30,8 +30,7 @@ public class Driver{
        Text.go(row,80); //right column
       Text.color(Text.BRIGHT, Text.GREEN);
       System.out.print("#");
-    }
   }
-        
 }
+
 
