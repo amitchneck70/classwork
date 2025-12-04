@@ -1,3 +1,4 @@
+import java.util.Random;
 public class Driver{
   public static void main(String[] args){
     System.out.print(Text.CLEAR_SCREEN); //clear terminal screen
@@ -44,7 +45,7 @@ public class Driver{
   public static void displayNum(int[] nums){
     int [] pos = {10, 30, 50, 70}; 
     for (int i = 0; i < nums.length; i++) {
-      Text.go(2, positions[i]); 
+      Text.go(2, pos[i]); 
       if (nums[i] < 25) {
         Text.color(Text.BRIGHT, Text.RED); // if number less than 25 its bright red
       } else if (nums[i] > 75) {
