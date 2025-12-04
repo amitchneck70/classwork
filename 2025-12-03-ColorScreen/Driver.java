@@ -3,10 +3,10 @@ public class Driver{
     System.out.print(Text.CLEAR_SCREEN); //clear terminal screen
     System.out.print(Text.HIDE_CURSOR); //hide cursor while draw
     drawBorder(); //border creation + border color
-   // int [] numbers = generateRandNum(); //create 4 random ints
-   // displayNum(numbers); // show the generated random num on the screen with colors
-  //  drawSeparator(); //horizontal line below the numbers
-//    drawMiddle(); // draw something in the middle
+    int [] numbers = generateRandNum(); //create 4 random ints
+    displayNum(numbers); // show the generated random num on the screen with colors
+   drawSeparator(); //horizontal line below the numbers
+   drawMiddle(); // draw something in the middle
    Text.go(31,0); //move cursor to line 31 so prompt is below screen
      System.out.println(Text.RESET);
   }
@@ -32,7 +32,16 @@ public class Driver{
       Text.color(Text.BRIGHT, Text.GREEN);
       System.out.print("#");
       }
- }
+    public static int[] generateRandNum() {
+        Random rand = new Random(); 
+        int[] nums = new int[4];    
+        for (int i = 0; i < 4; i++) {
+            nums[i] = rand.nextInt(100); // rand  num 0-99
+        }
+        return nums; 
+    }
+ 
+}
 }
 
 
