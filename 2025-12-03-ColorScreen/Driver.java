@@ -10,3 +10,4 @@ public class Driver{
    Text.go(31,0); //move cursor to line 31 so prompt is below screen
      System.out.println(Text.RESET);
   }
+}
