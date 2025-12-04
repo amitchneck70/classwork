@@ -27,10 +27,12 @@ public class Driver{
       Text.color(Text.BRIGHT, Text.YELLOW); // bright yellow
       System.out.print("#");
      } 
+     for(int row = 2; row < 30; row++){
        Text.go(row,80); //right column
       Text.color(Text.BRIGHT, Text.GREEN);
       System.out.print("#");
-  }
+      }
+ }
 }
 
 
