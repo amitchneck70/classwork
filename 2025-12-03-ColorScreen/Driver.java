@@ -32,6 +32,7 @@ public class Driver{
       Text.color(Text.BRIGHT, Text.GREEN);
       System.out.print("#");
       }
+  }
     public static int[] generateRandNum() {
         Random rand = new Random(); 
         int[] nums = new int[4];    
@@ -40,8 +41,34 @@ public class Driver{
         }
         return nums; 
     }
- 
+  public static void displayNum(int[] nums){
+    int [] pos = {10, 30, 50, 70}; 
+    for (int i = 0; i < nums.length; i++) {
+      Text.go(2, positions[i]); 
+      if (nums[i] < 25) {
+        Text.color(Text.BRIGHT, Text.RED); // if number less than 25 its bright red
+      } else if (nums[i] > 75) {
+        Text.color(Text.BRIGHT, Text.GREEN); // if over 75 bright green
+      } else {
+        Text.color(Text.WHITE); 
+      }
+      System.out.print(nums[i]);
+    }
+  }
+  // horiztonal sep
+  public static void drawSeparator(){
+    Text.go(3,2);
+    Text.color(Text.BRIGHT, Text.BLUE); 
+    for (int i = 2; i < 80; i++) {
+      System.out.print("-");
+    }
+  }
+  public static void drawMiddle(){
+    Text.go(15,35);
+    Text.color(Text.MAGENTA, Text.YELLOW, Text.BRIGHT); 
+    System.out.print("(^u^)"); //its supposed to be a smiley face
+  }
 }
-}
+
 
 
