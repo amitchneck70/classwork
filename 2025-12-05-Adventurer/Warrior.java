@@ -7,7 +7,7 @@ public class Warrior extends Adventurer {
     maxStamina=10;
   }
   @Override 
-  public String getSepcialName(){
+  public String getSpecialName(){
    return "Stamina";
   }
   @Override 
@@ -25,7 +25,7 @@ public class Warrior extends Adventurer {
   @Override
   public String attack(Adventurer other){
     other.applyDamage(3);
-  return getName() + "attacked" + other.getName();
+  return getName() + " attacked " + other.getName();
   }
   @Override
   public String support(Adventurer other){
@@ -36,7 +36,8 @@ public class Warrior extends Adventurer {
  public String support(){
    setHP(getHP() +2);
    return getName() + " supported themself";
-  @Override
+   } 
+ @Override
   public String specialAttack(Adventurer other){
    if(stamina >= 3){
     stamina -= 3;
