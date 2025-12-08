@@ -28,4 +28,12 @@ public class Warrior extends Adventurer {
   return getName() + "attacked" + other.getName();
   }
   @Override
+  public String support(Adventurer other){
+    other.setHP(other.getHP() + 2);
+    return getName() + " supported" + other.getName();
+  }
+ @Override
+ public String support(){
+   setHP(getHP() +2);
+   return getName() + " supported themself";
  
