@@ -1,16 +1,16 @@
-public class Warrior extends Adventurer {
+public class Barbarian extends Adventurer {
    private int stamina;
    private int maxStamina;
-  public Warrior(String name, int hp){
+  public Barbarian(String name, int hp){
     super(name, hp);
     stamina = 5;
     maxStamina=10;
   }
-  @Override 
+  @Override
   public String getSpecialName(){
    return "Stamina";
   }
-  @Override 
+  @Override
   public int getSpecial(){
     return stamina;
   }
@@ -36,7 +36,7 @@ public class Warrior extends Adventurer {
  public String support(){
    setHP(getHP() +2);
    return getName() + " supported themself";
-   } 
+   }
  @Override
   public String specialAttack(Adventurer other){
    if(stamina >= 3){
@@ -44,6 +44,6 @@ public class Warrior extends Adventurer {
    other.applyDamage(7);
    return getName() + "  used special attack on " + other.getName();
   }
- return getName() + "does not have enough stamina"; 
+ return getName() + "does not have enough stamina";
  }
 }
