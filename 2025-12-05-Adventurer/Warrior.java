@@ -14,4 +14,18 @@ public class Warrior extends Adventurer {
   public int getSpecial(){
     return stamina;
   }
-
+  @Override
+ public void setSpecial(int n){
+  stamina = n;
+  }
+  @Override
+  public int getSpecialMax(){
+    return maxStamina;
+   }
+  @Override
+  public String attack(Adventurer other){
+    other.applyDamage(3);
+  return getName() + "attacked" + other.getName();
+  }
+  @Override
+ 

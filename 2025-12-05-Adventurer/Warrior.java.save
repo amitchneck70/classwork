@@ -1,0 +1,38 @@
+public class Warrior extend Adventurer{
+  private int stamina;
+  private int maxStamina;
+  public Warrior(String name, int hp){
+    super(name, hp);
+    stamina= 5; //base stamina
+    maxStamina = 10; //max stamina
+  }
+ @Override
+ public String getSpecialname(){
+   return "Stamina";
+ }
+ @Override 
+ public int getSpecial(){
+   return stamina;
+ }
+ @Override
+ public void setSpecial(int n){
+  stamina = n;
+ }
+ @Override
+ public int getSpecialMax(){
+  return maxStamina;
+ }
+ @Override
+ public String attack(Adventurer other){
+  other.applyDamage(3);
+  return getName() + "attacked" + other.getName();
+  }
+ @Override 
+ public String support(Adventurer other){
+  other.setHP(other.getHP() +2);
+  return getName() + "supported" + other.getName();
+  }
+ @Override 
+ public String support(){
+  setHP(getHP() +2);
+  return getn
