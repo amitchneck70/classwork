@@ -6,9 +6,7 @@ public class Game{
     //Read one line of user input
     String CodeWarriorName = userInput.nextLine();
     System.out.println("Enter hp for Code Warrior");
-    int CodeWarriorHp = userInput.nextLine();
-    System.out.println
-    //Do something with the input
-  Adventurer enemy = new CodeWarrior(CodeWarriorName, CodeWarriorHp,
-
+    int CodeWarriorHp = userInput.nextInt();  //Do something with the input
+  Adventurer enemy = new CodeWarrior(CodeWarriorName, CodeWarriorHp);
+  }
 }
