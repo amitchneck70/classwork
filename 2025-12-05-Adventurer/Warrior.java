@@ -36,4 +36,13 @@ public class Warrior extends Adventurer {
  public String support(){
    setHP(getHP() +2);
    return getName() + " supported themself";
- 
+  @Override
+  public String specialAttack(Adventurer other){
+   if(stamina >= 3){
+    stamina -= 3;
+   other.applyDamage(7);
+   return getName() + "  used special attack on " + other.getName();
+  }
+ return getName() + "does not have enough stamina"; 
+ }
+}
